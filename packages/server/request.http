@@ -1,0 +1,9 @@
+POST http://js-cli-wrapper.lilypad.tech
+content-type: application/json
+
+{
+   "pk": "e968cf14bb73d437a39965d9a3e0ed8f06566725203df32719345b82499120e3",
+    "module": "sdxl-pipeline:v0.9-base-lilypad3",
+    "inputs": "-i Prompt='an astronaut floating against a white background' -i Steps=50",
+    "opts": { "stream": true }
+}

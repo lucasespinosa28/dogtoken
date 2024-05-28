@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nodejs
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - '3001:3001'
+    environment:
+      NODE_DOCKER_PORT: 3001
+    volumes:
+      - .:/usr/src/app
