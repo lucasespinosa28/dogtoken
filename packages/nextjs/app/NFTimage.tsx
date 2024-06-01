@@ -12,11 +12,6 @@ export const NFTimage = ({ Id }: { Id: bigint }) => {
     args: [Id],
   });
   if (data) {
-    console.log(data);
-    console.log(data.replace("//ipfs://", ""));
-    console.log(data.replace(/\/\/ipfs:\/\//, "http://"));
-  }
-  if (data) {
     if (data.includes("empty")) {
       return (
         <figure>

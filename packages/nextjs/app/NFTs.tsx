@@ -72,14 +72,32 @@ export const NFTGalerie = ({ address }: FetchProps) => {
         <div>
           <div className="columns-2">
             <BalanceToken address={address} />
-            <h1 className="my-4 text-xl inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-700/10">
+            <h1 className="my-4 text-lg inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-700/10">
               NFT balance: {data.length}
             </h1>
           </div>
-          <div className={`columns-${data.length}`}>
+          <div className={`columns-3`}>
             {data.map(id => (
               <NFTContainer key={id} id={id} />
             ))}
+          </div>
+          <div role="alert" className="alert alert-warning">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="stroke-current shrink-0 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+              />
+            </svg>
+            <span>
+              Lilypad take some time to return a generate image, If Lilypad server are not working try again later
+            </span>
           </div>
         </div>
       );

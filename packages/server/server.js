@@ -18,11 +18,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/images", express.static("/tmp/lilypad/data/downloaded-files"));
 
 // When a user submits their prompt, this will run our CLI Wrapper with their prompt.
-app.post("/api/cliWrapper", async (req, res) => {
+app.post("/api/cliWrapper", (req, res) => {
   // Grab the user's input
   const userInput = req.body.userInput;
   // Run our CLI Wrapper with their input
-  await runCliCommand(userInput, (error, filePath) => {
+  runCliCommand(userInput, (error, filePath) => {
     if (error) {
       return res.status(500).send("Error processing command");
     }
@@ -30,7 +30,7 @@ app.post("/api/cliWrapper", async (req, res) => {
     const urlPath = filePath.replace("/tmp/lilypad/data/downloaded-files", "");
     console.log(`http://localhost:${port}/images${urlPath}`)
     // Send the URL where the result can be accessed
-    res.send(`http://localhost:${port}/images${urlPath}`);
+    res.send(`http://localhost:${port}/images${urlPath}`).end();
   });
 });
 
