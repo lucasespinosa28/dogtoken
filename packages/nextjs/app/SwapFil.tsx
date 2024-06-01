@@ -12,7 +12,7 @@ export const SwapFil = () => {
   const { writeContractAsync: writeYourContractAsync } = useScaffoldWriteContract("Swap");
   return (
     <div className="m-2">
-      <h2 className="text-base text-center">Filecoin</h2>
+      <h2 className="text-base text-center">Convert Filecoin to Dogtoken NFT/Token</h2>
       <EtherInput value={ethAmount} onChange={amount => setEthAmount(amount)} />
       <button
         className="btn btn-success m-2"

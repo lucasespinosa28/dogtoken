@@ -12,7 +12,7 @@ export const Approve = () => {
         try {
           await writeYourContractAsync({
             functionName: "approve",
-            args: [deployedContracts[31337].Swap.address, 1000000000000000000000n],
+            args: [deployedContracts[314159].Swap.address, 1000000000000000000000n],
           });
         } catch (e) {
           console.error("Error setting greeting:", e);

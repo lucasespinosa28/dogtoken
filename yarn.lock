@@ -2207,6 +2207,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/fs-extra@npm:^11.0.4":
+  version: 11.0.4
+  resolution: "@types/fs-extra@npm:11.0.4"
+  dependencies:
+    "@types/jsonfile": "*"
+    "@types/node": "*"
+  checksum: 242cb84157631f057f76495c8220707541882c00a00195b603d937fb55e471afecebcb089bab50233ed3a59c69fd68bf65c1f69dd7fafe2347e139cc15b9b0e5
+  languageName: node
+  linkType: hard
+
 "@types/har-format@npm:*":
   version: 1.2.15
   resolution: "@types/har-format@npm:1.2.15"
@@ -2232,6 +2242,15 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: e60b153664572116dfea673c5bda7778dbff150498f44f998e34b5886d8afc47f16799280e4b6e241c0472aef1bc36add771c569c68fc5125fc2ae519a3eb9ac
+  languageName: node
+  linkType: hard
+
+"@types/jsonfile@npm:*":
+  version: 6.1.4
+  resolution: "@types/jsonfile@npm:6.1.4"
+  dependencies:
+    "@types/node": "*"
+  checksum: 309fda20eb5f1cf68f2df28931afdf189c5e7e6bec64ac783ce737bb98908d57f6f58757ad5da9be37b815645a6f914e2d4f3ac66c574b8fe1ba6616284d0e97
   languageName: node
   linkType: hard
 
@@ -2262,6 +2281,15 @@ __metadata:
   version: 14.18.33
   resolution: "@types/node@npm:14.18.33"
   checksum: 4e23f95186d8ae1d38c999bc6b46fe94e790da88744b0a3bfeedcbd0d9ffe2cb0ff39e85f43014f6739e5270292c1a1f6f97a1fc606fd573a0c17fda9a1d42de
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:>=20.12.12":
+  version: 20.13.0
+  resolution: "@types/node@npm:20.13.0"
+  dependencies:
+    undici-types: ~5.26.4
+  checksum: 8e061ecd6649bb587b047cee765f530ec43930f30cd47558d9630f5a802d61cf951e9205c610864cfbd58f70478612123e8cb46d58eb4855c695fb8fcaff5b7c
   languageName: node
   linkType: hard
 
@@ -10083,6 +10111,7 @@ __metadata:
     cors: ^2.8.5
     dotenv: ^16.4.5
     express: ^4.19.2
+    zx: ^8.1.2
   languageName: unknown
   linkType: soft
 
@@ -12046,5 +12075,22 @@ __metadata:
     react:
       optional: true
   checksum: 13190ee8e8a797c5347b525a7c392be62b2addacdd9645dd20d37ea053f96c7c7067c099c6201e98ebb8d54991f2e04e241cc323f9a25b841d44f0ae048e3afc
+  languageName: node
+  linkType: hard
+
+"zx@npm:^8.1.2":
+  version: 8.1.2
+  resolution: "zx@npm:8.1.2"
+  dependencies:
+    "@types/fs-extra": ^11.0.4
+    "@types/node": ">=20.12.12"
+  dependenciesMeta:
+    "@types/fs-extra":
+      optional: true
+    "@types/node":
+      optional: true
+  bin:
+    zx: build/cli.js
+  checksum: 033cde5bccb7b0a5ec2063d36b15180416bd91e711e7c9d4a9cb06f9788640bf6d52d8e8e6f7c97d353a380a9c13d78c28d514d44f8541b9f4a6dd3fc9870d1a
   languageName: node
   linkType: hard

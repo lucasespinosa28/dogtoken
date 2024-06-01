@@ -15,7 +15,7 @@ export const SwapDTl = () => {
   const { writeContractAsync: writeYourContractAsync } = useScaffoldWriteContract("Swap");
   return (
     <div className="m-2">
-      <h2 className="text-base text-center">Dogtoken</h2>
+      <h2 className="text-base text-center">Convert Dogtoken back to Filecoin</h2>
       <EtherInput value={ethAmount} onChange={amount => setEthAmount(amount)} />
       <Approve />
       <button

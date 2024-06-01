@@ -14,18 +14,6 @@ export type FetchProps = {
   address?: AddressType;
 };
 
-// const TokenOnwer = () => {
-//   const { data } = useScaffoldReadContract({
-//     contractName: "Dogtoken",
-//     functionName: "ownerOf",
-//     args: [57896044618658097711785492504343953926634992332820282019728792003956564819970n],
-//   });
-//   if (data) {
-//     return <h1>owner {data.toString()}</h1>;
-//   }
-//   return <h1>owner loading...</h1>;
-// };
-
 const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
 
@@ -35,7 +23,11 @@ const Home: NextPage = () => {
         <div className="px-5">
           <h1 className="text-center">
             <span className="block text-2xl mb-2">Welcome to</span>
-            <span className="block text-4xl font-bold">Scaffold-ETH 2</span>
+            <span className="block text-4xl font-bold">Dogtoken</span>
+            <span className="block mb-2 w-full text-center w-96">
+              ERC404 is an open, mixed ERC-20 and ERC-721 implementation designed to provide native fractionalization
+              while supporting seamless integration with existing protocols.
+            </span>
           </h1>
           <div className="flex justify-center items-center space-x-2">
             <p className="my-2 font-medium">Connected Address:</p>

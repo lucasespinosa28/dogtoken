@@ -6,7 +6,7 @@ WORKDIR  /server
 ARG osarch=amd64
 ARG osname=linux
 # Install app dependencies
-RUN npm install express cors dotenv
+RUN npm install express cors dotenv zx
 
 # Bundle the app source code
 COPY . .

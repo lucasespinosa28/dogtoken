@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Image from "next/image";
 import { BalanceToken } from "./BalanceToken";
 import { ChangeUri } from "./ChangeUri";
 import { NFTimage } from "./NFTimage";
@@ -15,7 +16,7 @@ const NFTContainer = ({ id }: { id: bigint }) => {
     event.preventDefault();
     setIsLoading(true); // Start loading
     try {
-      const response = await fetch("http://localhost:3001/api/cliWrapper", {
+      const response = await fetch("https://apiaiconfy.fly.dev/api/cliWrapper", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,7 +37,7 @@ const NFTContainer = ({ id }: { id: bigint }) => {
         {isLoading && <div className="skeleton w-96 h-96"></div>}
         {url ? (
           <figure>
-            <img src={url} alt="dog person nft" />
+            <Image src={url} alt="dog person nft" width={512} height={512} />
           </figure>
         ) : (
           !isLoading && <NFTimage Id={id} />
@@ -71,9 +72,11 @@ export const NFTGalerie = ({ address }: FetchProps) => {
         <div>
           <div className="columns-2">
             <BalanceToken address={address} />
-            <h2 className="w-full">NFT balance: {data.length}</h2>
+            <h1 className="my-4 text-xl inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-700/10">
+              NFT balance: {data.length}
+            </h1>
           </div>
-          <div className="columns-3">
+          <div className={`columns-${data.length}`}>
             {data.map(id => (
               <NFTContainer key={id} id={id} />
             ))}
@@ -81,7 +84,11 @@ export const NFTGalerie = ({ address }: FetchProps) => {
         </div>
       );
     } else {
-      return <h2>NFT balance: 0</h2>;
+      return (
+        <h1 className="my-4 text-xl inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-700/10">
+          NFT balance: 0
+        </h1>
+      );
     }
   } else {
     return <div className="skeleton h-4 w-40 my-2"></div>;

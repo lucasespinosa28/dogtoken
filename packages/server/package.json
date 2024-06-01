@@ -4,7 +4,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "zx": "^8.1.2"
   },
   "devDependencies": {
     "@types/cors": "^2",
