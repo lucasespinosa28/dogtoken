@@ -6,8 +6,8 @@ const { execSync } = require('child_process');
 // The function we will call on the front end, to run a lilypad job.
 function runCliCommand(callback) {
     console.log("Lilypad Starting...");
-    // Ensure the WEB3_PRIVATE_KEY environment variable is set
-    const command = `export WEB3_PRIVATE_KEY= && lilypad run github.com/lucasespinosa28/lilypad-module-custom-pipeline:v0.0.3`;
+    //the WEB3_PRIVATE_KEY is add in the server
+    const command = `lilypad run github.com/lucasespinosa28/lilypad-module-custom-pipeline:v0.0.3`;
 
 
     // This is a callback function to handle any errors when calling runCliCommand function.
