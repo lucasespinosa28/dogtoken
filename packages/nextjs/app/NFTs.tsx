@@ -5,6 +5,7 @@ import Image from "next/image";
 import { BalanceToken } from "./BalanceToken";
 import { ChangeUri } from "./ChangeUri";
 import { NFTimage } from "./NFTimage";
+import { NFTloadings } from "./NFTloadings";
 import { FetchProps } from "./page";
 import { useScaffoldReadContract } from "~~/hooks/scaffold-eth";
 
@@ -16,8 +17,8 @@ const NFTContainer = ({ id }: { id: bigint }) => {
     event.preventDefault();
     setIsLoading(true); // Start loading
     try {
-      const response = await fetch("https://apiaiconfy.fly.dev/api/cliWrapper", {
-        method: "POST",
+      const response = await fetch("https://apiaiconfy.fly.dev/newimage", {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
@@ -34,10 +35,19 @@ const NFTContainer = ({ id }: { id: bigint }) => {
   return (
     <div key={id}>
       <div className="card w-96 bg-base-100 shadow-xl">
-        {isLoading && <div className="skeleton w-96 h-96"></div>}
+        {isLoading && <NFTloadings />}
         {url ? (
           <figure>
-            <Image src={url} alt="dog person nft" width={512} height={512} />
+            <Image
+              src={url}
+              onError={() => {
+                const newUrl = url;
+                setUrl(newUrl);
+              }}
+              alt="dog person nft"
+              width={512}
+              height={512}
+            />
           </figure>
         ) : (
           !isLoading && <NFTimage Id={id} />

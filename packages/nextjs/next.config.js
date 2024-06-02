@@ -3,7 +3,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["localhost"],
+    domains: ["localhost", "ipfs.io", "apiaiconfy.fly.dev"],
   },
   reactStrictMode: true,
   typescript: {
